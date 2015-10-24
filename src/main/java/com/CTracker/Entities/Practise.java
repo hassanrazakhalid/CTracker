@@ -15,7 +15,7 @@ public class Practise {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+	private String name;
 	
 	// relations
 	@ManyToOne
@@ -40,6 +40,17 @@ public class Practise {
 
 	public void setInsuranceDetail(List<InsuranceDetail> insuranceDetail) {
 		this.insuranceDetail = insuranceDetail;
+	}
+
+	
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 

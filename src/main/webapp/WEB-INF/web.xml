@@ -5,12 +5,7 @@
 	version="2.5">
 
 	<display-name>Archetype Created Web Application</display-name>
-
-
-
-	<!-- <listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener> -->
+	
 	<servlet>
 		<servlet-name>spring-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -21,6 +16,9 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+ <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener> 
 <welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>

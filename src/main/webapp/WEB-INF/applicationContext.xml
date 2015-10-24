@@ -14,11 +14,11 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
 
-	<context:component-scan base-package="com.SpringHibernate"/> 
+	<context:component-scan base-package="com.CTracker"/> 
 
    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
       <property name="dataSource" ref="dataSource" />
-      <property name="packagesToScan" value="com.SpringHibernate.Entities"></property>
+      <property name="packagesToScan" value="com.CTracker.Entities"></property>
       <property name="jpaVendorAdapter">
          <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
       </property>
@@ -32,7 +32,7 @@
  
    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-      <property name="url" value="jdbc:mysql://localhost:3307/test" />
+      <property name="url" value="jdbc:mysql://localhost:3307/ctrackerdev" />
       <property name="username" value="admin" />
       <property name="password" value="admin" />
    </bean>
@@ -45,6 +45,6 @@
    <bean id="persistenceExceptionTranslationPostProcessor"
       class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
  
-<jpa:repositories base-package="com.SpringHibernate.Repositories"></jpa:repositories>
+<jpa:repositories base-package="com.CTracker.Repositories"></jpa:repositories>
 
 </beans>

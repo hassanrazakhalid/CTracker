@@ -31,7 +31,7 @@ public class RoleAndPermission {
 	}
 		//------
 	
-
+ 
 	public Integer getId() {
 		return id;
 	}

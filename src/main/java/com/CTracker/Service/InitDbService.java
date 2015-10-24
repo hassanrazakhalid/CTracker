@@ -1,5 +1,9 @@
 package com.CTracker.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
@@ -46,9 +50,28 @@ public class InitDbService {
 		
 		user.setRole(adminRole);
 		
+		List<Practise> practiseList =new ArrayList<Practise>();
+		Practise practise = new Practise();
+		practise.setName("Shakaut Khanum");
+		practiseList.add(practise);
+		
+		InsuranceDetail insuranceDetail = new InsuranceDetail();
+		insuranceDetail.setStatus("POR");
+		insuranceDetail.setApplicationFiledData(new Date());
+		insuranceDetail.setProvider("Dr asif");
+		insuranceRepo.save(insuranceDetail);
+		
+		Comment comment = new Comment();
+		comment.setDetail("Hello this is test comment");
+		comment.setDate(new Date());
+		comment.setInsuranceDetail(insuranceDetail);
+		commentRepo.save(comment);
+		
+		practiseRepo.save(practise);
+		
+		user.setPractiseList(practiseList);
+		
 		userRepo.save(user);
-		
-		
 		
 	}
 }
