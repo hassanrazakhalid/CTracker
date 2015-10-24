@@ -20,7 +20,7 @@ public class Comment {
 	// relations
 	
 	@ManyToOne
-	@JoinColumn (name = "id")
+	@JoinColumn (name = "id", insertable = false, updatable = false)
 	private InsuranceDetail insuranceDetail;
 	
 	//relation methods

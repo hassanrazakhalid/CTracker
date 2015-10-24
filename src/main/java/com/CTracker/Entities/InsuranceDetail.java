@@ -27,7 +27,7 @@ public class InsuranceDetail {
 	// relations
 	
 	@ManyToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "id" , insertable = false, updatable = false)
 	private Practise practise;
 	
 	@OneToMany (mappedBy = "insuranceDetail")

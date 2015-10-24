@@ -46,6 +46,8 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.4.Final</version>
 		</dependency>
+		
+		
 
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -115,6 +117,11 @@
 
 		<!-- A scheme cannot contain two global components with same name -->
 
+<dependency>
+	<groupId>javax</groupId>
+	<artifactId>javaee-api</artifactId>
+	<version>7.0</version>
+</dependency>
 
 
 	</dependencies>
