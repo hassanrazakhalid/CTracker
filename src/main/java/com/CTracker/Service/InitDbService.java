@@ -35,43 +35,43 @@ public class InitDbService {
 	@PostConstruct
 	public void initDbDummaydata(){
 		
-		User user = new User();
-		user.setName("hassan");
-		user.setEmail("hrk@hotmail.com");
-		
-		RoleAndPermission adminRole = new RoleAndPermission();
-		adminRole.setName("admin");
-		adminRole.setUser(user);
-		adminRole.setCreate(true);
-		adminRole.setUpdate(true);
-		adminRole.setDelete(false);
-		adminRole.setRead(true);
-		roleRepo.save(adminRole);
-		
-		user.setRole(adminRole);
-		
-		List<Practise> practiseList =new ArrayList<Practise>();
-		Practise practise = new Practise();
-		practise.setName("Shakaut Khanum");
-		practiseList.add(practise);
-		
-		InsuranceDetail insuranceDetail = new InsuranceDetail();
-		insuranceDetail.setStatus("POR");
-		insuranceDetail.setApplicationFiledData(new Date());
-		insuranceDetail.setProvider("Dr asif");
-		insuranceRepo.save(insuranceDetail);
-		
-		Comment comment = new Comment();
-		comment.setDetail("Hello this is test comment");
-		comment.setDate(new Date());
-		comment.setInsuranceDetail(insuranceDetail);
-		commentRepo.save(comment);
-		
-		practiseRepo.save(practise);
-		
-		user.setPractiseList(practiseList);
-		
-		userRepo.save(user);
+//		User user = new User();
+//		user.setName("hassan");
+//		user.setEmail("hrk@hotmail.com");
+//		
+//		RoleAndPermission adminRole = new RoleAndPermission();
+//		adminRole.setName("admin");
+//		adminRole.setUser(user);
+//		adminRole.setCreate(true);
+//		adminRole.setUpdate(true);
+//		adminRole.setDelete(false);
+//		adminRole.setRead(true);
+//		roleRepo.save(adminRole);
+//		
+//		user.setRole(adminRole);
+//		
+//		List<Practise> practiseList =new ArrayList<Practise>();
+//		Practise practise = new Practise();
+//		practise.setName("Shakaut Khanum");
+//		practiseList.add(practise);
+//		
+//		InsuranceDetail insuranceDetail = new InsuranceDetail();
+//		insuranceDetail.setStatus("POR");
+//		insuranceDetail.setApplicationFiledData(new Date());
+//		insuranceDetail.setProvider("Dr asif");
+//		insuranceRepo.save(insuranceDetail);
+//		
+//		Comment comment = new Comment();
+//		comment.setDetail("Hello this is test comment");
+//		comment.setDate(new Date());
+//		comment.setInsuranceDetail(insuranceDetail);
+//		commentRepo.save(comment);
+//		
+//		practiseRepo.save(practise);
+//		
+//		user.setPractiseList(practiseList);
+//		
+//		userRepo.save(user);
 		
 	}
 }
