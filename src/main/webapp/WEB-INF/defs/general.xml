@@ -8,7 +8,7 @@
   </definition>
   
   <definition name="login" extends="common">
-    <put-attribute name="title" value="Java Blog" />
+    <put-attribute name="title" value="Login" />
     <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
   </definition>
   
@@ -18,7 +18,7 @@
     <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
   </definition>
   
-     <definition name="home" extends="Dashboard">
+  <definition name="home" extends="Dashboard">
     <put-attribute name="title" value="Home" />
     <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
   </definition>
