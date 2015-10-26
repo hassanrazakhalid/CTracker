@@ -9,17 +9,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.*;
 @Entity
+@Table(name = "USERS")
 public class User {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "Persion_Id")
 	private Integer id;
+	
+	@Column(name = "Name")
 	private String name;
+	
+	@Column(name = "Email")
 	private String email;
+	
+	@Column(name = "Password")
 	private String password;
 	
 	//relations
-	@OneToOne(mappedBy = "user",cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToOne(mappedBy = "user",cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER, orphanRemoval = true)
 	private	RoleAndPermission roleAndPermission;
 	
 	@OneToMany(mappedBy = "user")

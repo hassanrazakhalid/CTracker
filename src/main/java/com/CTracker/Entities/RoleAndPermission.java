@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 public class RoleAndPermission {
 
@@ -13,9 +15,16 @@ public class RoleAndPermission {
 	private Integer id;
 	private String name;
 	
+	@Type(type = "org.hibernate.type.NumericBooleanType")
 	private Boolean create;
+	
+	@Type(type = "org.hibernate.type.NumericBooleanType")
 	private Boolean read;
+	
+	@Type(type = "org.hibernate.type.NumericBooleanType")
 	private Boolean update;
+	
+	@Type(type = "org.hibernate.type.NumericBooleanType")
 	private Boolean delete;
 	
 	// relations

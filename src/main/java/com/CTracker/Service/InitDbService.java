@@ -5,11 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import javax.persistence.Persistence;
 import com.CTracker.Entities.*;
 import com.CTracker.Repositories.*;
 
@@ -35,10 +37,12 @@ public class InitDbService {
 	@PostConstruct
 	public void initDbDummaydata(){
 		
-//		User user = new User();
-//		user.setName("hassan");
-//		user.setEmail("hrk@hotmail.com");
-//		
+		EntityManagerFactory enttyFactory = Persistence.createEntityManagerFactory("");
+		
+		User user = new User();
+		user.setName("hassan");
+		user.setEmail("hrk@hotmail.com");
+				
 //		RoleAndPermission adminRole = new RoleAndPermission();
 //		adminRole.setName("admin");
 //		adminRole.setUser(user);
@@ -49,6 +53,9 @@ public class InitDbService {
 //		roleRepo.save(adminRole);
 //		
 //		user.setRole(adminRole);
+		
+		userRepo.save(user);
+
 //		
 //		List<Practise> practiseList =new ArrayList<Practise>();
 //		Practise practise = new Practise();
